@@ -1,0 +1,16 @@
+{
+  "name": "ImgGen",
+  "version": "1.0.0",
+  "description": "ImgGen",
+  "scripts": {},
+  "repository": {
+    "type": "git"
+  },
+  "author": "dKnight",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "jimp": "^0.16.1"
+  },
+  "devDependencies": {}
+}

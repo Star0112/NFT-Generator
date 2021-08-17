@@ -1,0 +1,7 @@
+node_modules/
+images/*
+traits/*
+.env
+package-lock.json
+traits.json
+info.json
