@@ -1,5 +1,5 @@
 
-const totalImages = require('./all.json');
+const totalImages = require('./info.json');
 const multiplier = require('./multiplier.json');
 const totalArr = require('./total.json');
 
