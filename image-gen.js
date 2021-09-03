@@ -15,6 +15,26 @@ function getFilePath(trait, index) {
     return `traits/${trait}/${fileName}.${extension}`;
 }
 
+async function checkAllTraitInfo() {
+    for (const trait of Object.keys(traits)) {
+        let imageCount = 0;
+        for (let i = 0; i < traits[trait].length; i++) {
+            imageCount = imageCount + traits[trait][i].count;
+            const fileName = getFilePath(trait, i);
+            if (fileName === undefined || fs.existsSync(fileName)) {
+            } else {
+                console.log("DOES NOT exist:", fileName, trait, i);
+                exist(1);
+            }
+        }
+        if (imageCount.toString() !== imgCount) {
+            console.log("Total count is not correct:", trait, imageCount);
+            exist(1);
+        }
+    }
+    console.log("All are correct!!!");
+}
+
 async function generateImage(assignedTraits, index) {
     let baseImg = await Jimp.read(
         getFilePath(Object.keys(assignedTraits)[0], assignedTraits[Object.keys(assignedTraits)[0]][index])
@@ -33,7 +53,7 @@ async function generateImage(assignedTraits, index) {
 
 function shuffle(array) {
     var tmp, current, top = array.length;
-    if(top) while(--top) {
+    if (top) while (--top) {
         current = Math.floor(Math.random() * (top + 1));
         tmp = array[current];
         array[current] = array[top];
@@ -84,4 +104,6 @@ async function main() {
     console.log('Finished');
 }
 
+// checkAllTraitInfo();
 main();
+
