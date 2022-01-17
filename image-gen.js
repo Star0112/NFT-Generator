@@ -8,11 +8,12 @@ const imgCount = process.env.IMAGE_COUNT;
 
 function getFilePath(trait, index) {
     const fileName = traits[trait][index].name;
+    const count = traits[trait][index].count;
     if (fileName === 'NONE') {
         return undefined;
     }
 
-    return `traits/${trait}/${fileName}.${extension}`;
+    return `traits/${trait}/${fileName}#${count}.${extension}`;
 }
 
 async function checkAllTraitInfo() {
@@ -48,7 +49,7 @@ async function generateImage(assignedTraits, index) {
         }
     }
 
-    await baseImg.write(`images/${index}.png`);
+    await baseImg.resize(495, 550).write(`images/${index}.png`);
 }
 
 function shuffle(array) {
