@@ -21,7 +21,7 @@ const orders = [
   "Body",
   "Mouth",
   "Clothes",
-  "Eye",
+  "Eyes",
   "Eyewear",
   "Cap",
   "Accessories"

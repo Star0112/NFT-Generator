@@ -49,7 +49,7 @@ async function generateImage(assignedTraits, index) {
         }
     }
 
-    await baseImg.resize(495, 550).write(`images/${index}.png`);
+    await baseImg.resize(495, 550).write(`images/${index + 1333}.png`);
 }
 
 function shuffle(array) {
@@ -73,7 +73,7 @@ function makeInfo(assignedTraits) {
                 temp[trait] = name;
             }
         }
-        temp.name = `${process.env.NAME} #${i}`;
+        temp.name = `${process.env.NAME} #${i + 1333}`;
         info.push(temp);
     }
 
