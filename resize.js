@@ -3,7 +3,8 @@ require('dotenv').config();
 var Jimp = require('jimp');
 const fs = require('fs');
 
-const newImageSize = 640;
+const newImageWidth = 1024;
+const newImageHeight = 1024;
 
 async function resize(folder) {
   console.log(`\nChecking folder ${folder}\n`);
@@ -17,7 +18,7 @@ async function resize(folder) {
       } else {
         console.log(`Resizing image ${category}`);
         let img = await Jimp.read(`${folder}/${category}`);
-        await img.resize(newImageSize, newImageSize) // resize
+        await img.resize(newImageWidth, newImageHeight) // resize
           .write(`traits/${folder}/${category}`); // save
       }
     } catch (err) {
